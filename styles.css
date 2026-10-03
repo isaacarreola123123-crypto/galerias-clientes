@@ -856,3 +856,66 @@ footer{
   }
 
 }
+/* ============================================================
+   AJUSTE FORZADO DE PORTADA
+   ============================================================ */
+
+#gallerySelector{
+  display:grid !important;
+  grid-template-columns:minmax(0, 1.5fr) minmax(360px, .75fr) !important;
+  gap:70px !important;
+  width:100% !important;
+  max-width:1180px !important;
+  margin:0 auto 70px !important;
+  align-items:start !important;
+}
+
+#gallerySelector .welcome-column{
+  width:100% !important;
+  text-align:left !important;
+}
+
+#gallerySelector .gallery-column{
+  display:block !important;
+  width:100% !important;
+  position:sticky !important;
+  top:105px !important;
+  background:#fff !important;
+  border:1px solid #ddd9d1 !important;
+  padding:32px !important;
+  text-align:left !important;
+}
+
+#gallerySelector .gallery-column h2{
+  text-align:left !important;
+}
+
+#gallerySelector .gallery-description{
+  text-align:left !important;
+}
+
+#gallerySelector .gallery-list{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:10px !important;
+}
+
+#gallerySelector .private-note{
+  display:flex !important;
+  text-align:left !important;
+}
+
+
+/* En pantallas pequeñas sí queremos una columna */
+
+@media(max-width:850px){
+
+  #gallerySelector{
+    grid-template-columns:1fr !important;
+  }
+
+  #gallerySelector .gallery-column{
+    position:static !important;
+  }
+
+}
