@@ -48,68 +48,66 @@
 
 <main>
 
-  <!-- SELECTOR DE GALERÍAS -->
+  <!-- ======================================================
+       PORTADA / INSTRUCCIONES + GALERÍAS
+       ====================================================== -->
 
-  <section id="gallerySelector" class="intro">
-
-    <p class="eyebrow">
-      GALERÍAS PRIVADAS
-    </p>
-
-    <h1>
-      Selecciona tu galería
-    </h1>
-
-    <p>
-      Elige tu galería para acceder a tus fotografías.
-    </p>
+  <section
+    id="gallerySelector"
+    class="selector-layout">
 
 
-    <div
-      id="galleryList"
-      class="gallery-list">
+    <!-- COLUMNA IZQUIERDA -->
 
-      <div class="connection-status">
-        Cargando galerías…
-      </div>
-
-    </div>
-
-
-    <!-- INSTRUCCIONES PARA EL CLIENTE -->
-
-    <section class="client-instructions">
+    <div class="welcome-column">
 
       <p class="eyebrow">
-        INFORMACIÓN
+        BIENVENIDO
       </p>
 
-      <h2>
-        Bienvenido a tu galería
-      </h2>
+      <h1>
+        Selecciona tus fotografías
+      </h1>
 
-      <p>
-        A continuación encontrarás tu galería de fotografías.
-        Busca en el listado tu nombre y haz clic sobre ella para acceder a tus imágenes.
+      <p class="welcome-text">
+        A continuación encontrarás las instrucciones para realizar
+        tu selección. Cuando estés listo, busca tu nombre en el listado
+        de galerías y accede a tus fotografías.
       </p>
+
+
+      <div class="instructions-header">
+
+        <p class="eyebrow">
+          INSTRUCCIONES
+        </p>
+
+        <h2>
+          ¿Cómo funciona?
+        </h2>
+
+      </div>
+
 
       <div class="instruction-steps">
 
+
         <div class="instruction-step">
 
-          <span class="instruction-number">
+          <div class="instruction-number">
             01
-          </span>
+          </div>
 
-          <div>
+          <div class="instruction-content">
 
             <h3>
               Visualiza tus fotografías
             </h3>
 
             <p>
-              Revisa todas las fotografías de tu sesión o evento y
-              utiliza el visor para observar cada imagen con mayor detalle.
+              Revisa todas las fotografías de tu sesión o evento.
+              Puedes abrir cualquier imagen para verla en grande
+              y observarla con mayor detalle.
             </p>
 
           </div>
@@ -119,11 +117,11 @@
 
         <div class="instruction-step">
 
-          <span class="instruction-number">
+          <div class="instruction-number">
             02
-          </span>
+          </div>
 
-          <div>
+          <div class="instruction-content">
 
             <h3>
               Selecciona las fotografías
@@ -131,7 +129,7 @@
 
             <p>
               Marca las fotografías que deseas solicitar para edición.
-              Puedes seleccionar tantas como necesites.
+              Puedes seleccionar todas las que necesites.
             </p>
 
           </div>
@@ -141,21 +139,21 @@
 
         <div class="instruction-step">
 
-          <span class="instruction-number">
+          <div class="instruction-number">
             03
-          </span>
+          </div>
 
-          <div>
+          <div class="instruction-content">
 
             <h3>
               Indica los detalles de edición
             </h3>
 
             <p>
-              En cada fotografía seleccionada puedes escribir una descripción
-              con los cambios que deseas realizar.
-              Por ejemplo: quitar el reflejo de los lentes, arreglar el cabello,
-              mejorar el color, eliminar una persona del fondo, etc.
+              En cada fotografía seleccionada puedes escribir qué
+              cambios deseas realizar. Por ejemplo: quitar el reflejo
+              de los lentes, arreglar el cabello, mejorar el color,
+              eliminar una persona del fondo, etc.
             </p>
 
           </div>
@@ -165,11 +163,11 @@
 
         <div class="instruction-step">
 
-          <span class="instruction-number">
+          <div class="instruction-number">
             04
-          </span>
+          </div>
 
-          <div>
+          <div class="instruction-content">
 
             <h3>
               Revisa tu selección
@@ -187,26 +185,73 @@
       </div>
 
 
-      <div class="instruction-note">
+      <div class="important-box">
 
         <strong>
           Importante
         </strong>
 
         <p>
-          Selecciona únicamente las fotografías que deseas solicitar para edición
-          y procura describir con claridad los cambios que te gustaría realizar
-          en cada imagen.
+          Selecciona únicamente las fotografías que deseas solicitar
+          para edición y procura describir con claridad los cambios
+          que te gustaría realizar en cada imagen.
         </p>
 
       </div>
 
-    </section>
+    </div>
+
+
+    <!-- COLUMNA DERECHA -->
+
+    <aside class="gallery-column">
+
+      <p class="eyebrow">
+        GALERÍAS PRIVADAS
+      </p>
+
+      <h2>
+        Tu galería
+      </h2>
+
+      <p class="gallery-description">
+        Busca tu nombre en el listado para acceder
+        a tus fotografías.
+      </p>
+
+
+      <div
+        id="galleryList"
+        class="gallery-list">
+
+        <div class="connection-status">
+          Cargando galerías…
+        </div>
+
+      </div>
+
+
+      <div class="private-note">
+
+        <span class="private-icon">
+          🔒
+        </span>
+
+        <p>
+          Esta es una galería privada. Solo las personas con acceso
+          pueden visualizar estas fotografías.
+        </p>
+
+      </div>
+
+    </aside>
 
   </section>
 
 
-  <!-- GALERÍA -->
+  <!-- ======================================================
+       GALERÍA
+       ====================================================== -->
 
   <section
     id="photoGallerySection"
@@ -329,7 +374,9 @@
 </main>
 
 
-<!-- VISOR -->
+<!-- ======================================================
+     VISOR
+     ====================================================== -->
 
 <div
   id="lightbox"
