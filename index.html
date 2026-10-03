@@ -1,89 +1,335 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Galería privada — Jorge Arreola Fotografía</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Galerías privadas — Jorge Arreola Fotografía</title>
+
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
+
 <header class="topbar">
+
   <div>
-    <div class="brand">JORGE ARREOLA <span>FOTOGRAFÍA</span></div>
-    <div class="subtitle">Galería privada · <span id="clientNameTop">Vianey</span></div>
+    <div class="brand">
+      JORGE ARREOLA <span>FOTOGRAFÍA</span>
+    </div>
+
+    <div class="subtitle">
+      Galería privada ·
+      <span id="clientNameTop">Selecciona una galería</span>
+    </div>
   </div>
-  <div class="counter"><strong id="selectedCount">0</strong> seleccionadas</div>
+
+  <div class="counter">
+    <strong id="selectedCount">0</strong>
+    seleccionadas
+  </div>
+
 </header>
 
+
 <main>
-  <section class="intro">
-    <p class="eyebrow">SELECCIÓN DE FOTOGRAFÍAS</p>
-    <h1 id="galleryTitle">Galería de Vianey</h1>
-    <p>Haz clic sobre una fotografía para verla en grande. Usa el botón de selección para marcar las que deseas.</p>
-    <div id="connectionStatus" class="connection-status">Conectando con la galería…</div>
+
+  <!-- SELECTOR DE GALERÍAS -->
+
+  <section id="gallerySelector" class="intro">
+
+    <p class="eyebrow">
+      GALERÍAS PRIVADAS
+    </p>
+
+    <h1>
+      Selecciona tu galería
+    </h1>
+
+    <p>
+      Elige tu galería para acceder a tus fotografías.
+    </p>
+
+    <div
+      id="galleryList"
+      class="gallery-list">
+      
+      <div class="connection-status">
+        Cargando galerías…
+      </div>
+
+    </div>
+
+    <div style="margin-top:20px;">
+
+      <a
+        id="adminLink"
+        href="#"
+        target="_blank"
+        rel="noopener"
+        class="secondary">
+        Administración de fotografía
+      </a>
+
+    </div>
+
   </section>
 
-  <div class="toolbar">
-    <div><span id="pageInfo"></span></div>
-    <div class="actions">
-      <button id="clearBtn" class="secondary">Limpiar selección</button>
-      <button id="copyBtn" class="secondary">Copiar lista</button>
-      <button id="downloadBtn" class="primary">Descargar selección TXT</button>
-      <button id="downloadGalleryBtn" class="secondary">Descargar galería completa</button>
+
+  <!-- GALERÍA -->
+
+  <section
+    id="photoGallerySection"
+    class="hidden">
+
+    <section class="intro">
+
+      <p class="eyebrow">
+        SELECCIÓN DE FOTOGRAFÍAS
+      </p>
+
+      <h1 id="galleryTitle">
+        Galería
+      </h1>
+
+      <p>
+        Haz clic sobre una fotografía para verla en grande.
+        Usa el botón de selección para marcar las que deseas.
+      </p>
+
+      <div
+        id="connectionStatus"
+        class="connection-status">
+        Conectando con la galería…
+      </div>
+
+    </section>
+
+
+    <div class="toolbar">
+
+      <div>
+        <span id="pageInfo"></span>
+      </div>
+
+      <div class="actions">
+
+        <button
+          id="backToGalleriesBtn"
+          class="secondary">
+          ← Cambiar galería
+        </button>
+
+        <button
+          id="clearBtn"
+          class="secondary">
+          Limpiar selección
+        </button>
+
+        <button
+          id="copyBtn"
+          class="secondary">
+          Copiar lista
+        </button>
+
+        <button
+          id="downloadBtn"
+          class="primary">
+          Descargar selección TXT
+        </button>
+
+        <button
+          id="downloadGalleryBtn"
+          class="secondary">
+          Descargar galería completa
+        </button>
+
+      </div>
+
     </div>
-  </div>
 
-  <section id="gallery" class="gallery"></section>
 
-  <nav class="pagination" aria-label="Paginación">
-    <button id="prevBtn" class="secondary">← Anterior</button>
-    <span id="pageNumber"></span>
-    <button id="nextBtn" class="secondary">Siguiente →</button>
-  </nav>
+    <section
+      id="gallery"
+      class="gallery">
+    </section>
 
-  <section class="selection-box">
-    <div>
-      <p class="eyebrow">SELECCIÓN ACTUAL</p>
-      <h2 id="selectionTitle">0 fotografías seleccionadas</h2>
-    </div>
-    <pre id="selectionList">Todavía no has seleccionado fotografías.</pre>
+
+    <nav
+      class="pagination"
+      aria-label="Paginación">
+
+      <button
+        id="prevBtn"
+        class="secondary">
+        ← Anterior
+      </button>
+
+      <span id="pageNumber"></span>
+
+      <button
+        id="nextBtn"
+        class="secondary">
+        Siguiente →
+      </button>
+
+    </nav>
+
+
+    <section class="selection-box">
+
+      <div>
+
+        <p class="eyebrow">
+          SELECCIÓN ACTUAL
+        </p>
+
+        <h2 id="selectionTitle">
+          0 fotografías seleccionadas
+        </h2>
+
+      </div>
+
+      <pre id="selectionList">Todavía no has seleccionado fotografías.</pre>
+
+    </section>
+
   </section>
+
 </main>
 
-<div id="lightbox" class="lightbox" aria-hidden="true">
-  <button id="closeLightbox" class="close-lightbox" aria-label="Cerrar">×</button>
-  <button id="lightPrev" class="nav-light prev-light" aria-label="Fotografía anterior">‹</button>
+
+<!-- VISOR -->
+
+<div
+  id="lightbox"
+  class="lightbox"
+  aria-hidden="true">
+
+  <button
+    id="closeLightbox"
+    class="close-lightbox"
+    aria-label="Cerrar">
+    ×
+  </button>
+
+  <button
+    id="lightPrev"
+    class="nav-light prev-light"
+    aria-label="Fotografía anterior">
+    ‹
+  </button>
+
 
   <div class="viewer">
-    <div class="photo-stage" id="photoStage">
-      <img id="largePhoto" src="" alt="">
+
+    <div
+      class="photo-stage"
+      id="photoStage">
+
+      <img
+        id="largePhoto"
+        src=""
+        alt="">
+
     </div>
+
+
     <div class="viewer-info">
+
       <div>
+
         <strong id="largeName"></strong>
+
         <span id="largePosition"></span>
+
       </div>
+
+
       <div class="viewer-actions">
-        <button id="zoomOut" class="viewer-btn">−</button>
-        <button id="zoomReset" class="viewer-btn">100%</button>
-        <button id="zoomIn" class="viewer-btn">+</button>
-        <button id="downloadPhoto" class="viewer-btn">↓ Descargar</button>
-        <button id="selectLarge" class="select-btn">Seleccionar foto</button>
+
+        <button
+          id="zoomOut"
+          class="viewer-btn">
+          −
+        </button>
+
+        <button
+          id="zoomReset"
+          class="viewer-btn">
+          100%
+        </button>
+
+        <button
+          id="zoomIn"
+          class="viewer-btn">
+          +
+        </button>
+
+        <button
+          id="downloadPhoto"
+          class="viewer-btn">
+          ↓ Descargar
+        </button>
+
+        <button
+          id="selectLarge"
+          class="select-btn">
+          Seleccionar foto
+        </button>
+
       </div>
+
     </div>
+
+
     <div class="instruction-area">
-      <label for="photoInstruction">Instrucciones para esta foto (opcional)</label>
-      <textarea id="photoInstruction" rows="2" placeholder="Ej.: quitar reflejo de los lentes, arreglar cabello, mejorar color, eliminar persona del fondo..."></textarea>
-      <button id="saveInstruction" class="save-instruction" type="button">Guardar instrucción</button>
+
+      <label for="photoInstruction">
+        Instrucciones para esta foto (opcional)
+      </label>
+
+      <textarea
+        id="photoInstruction"
+        rows="2"
+        placeholder="Ej.: quitar reflejo de los lentes, arreglar cabello, mejorar color, eliminar persona del fondo..."></textarea>
+
+      <button
+        id="saveInstruction"
+        class="save-instruction"
+        type="button">
+        Guardar instrucción
+      </button>
+
     </div>
-    <p class="hint">Puedes ampliar con +, − o la rueda del mouse. Arrastra la imagen cuando esté ampliada.</p>
+
+
+    <p class="hint">
+      Puedes ampliar con +, − o la rueda del mouse.
+      Arrastra la imagen cuando esté ampliada.
+    </p>
+
   </div>
 
-  <button id="lightNext" class="nav-light next-light" aria-label="Fotografía siguiente">›</button>
+
+  <button
+    id="lightNext"
+    class="nav-light next-light"
+    aria-label="Fotografía siguiente">
+    ›
+  </button>
+
 </div>
 
-<footer>Jorge Arreola Fotografía · Galería de selección</footer>
+
+<footer>
+  Jorge Arreola Fotografía · Galería de selección
+</footer>
+
+
 <script src="config.js"></script>
 <script src="script.js"></script>
+
 </body>
 </html>
