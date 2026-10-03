@@ -1,11 +1,14 @@
-// CONFIGURACIÓN DE LA GALERÍA V4
+// CONFIGURACIÓN DE LA GALERÍA
 // No necesitas subir fotografías a GitHub.
+
 const GALLERY_CONFIG = {
+
+  // Galería actual de Vianey
   clientName: "Vianey",
   galleryTitle: "Galería de Vianey",
   folderId: "18aHGFQLChKJc_gWssOFoNYLAuLnp_y8w",
 
-  // Pega aquí la URL de tu Google Apps Script desplegado como aplicación web.
-  // Ejemplo: https://script.google.com/macros/s/XXXXXXXX/exec
-  appsScriptUrl: "https://script.google.com/macros/s/AKfycbyLamD7iocB_KAa0KceAcCXrjrTtKIKFJM7VbZnvRuzxK1HlMEz06VDaSDCffMUKOFM/exec"
+  // Google Apps Script — implementación actual
+  appsScriptUrl: "https://script.google.com/macros/s/AKfycbkK94azZxxB_ujjziUZNTI9R5uqXNKQh1pu8XiXdmuZRYoOUWpMVIZLi1MEeEpGdW2b/exec"
+
 };
